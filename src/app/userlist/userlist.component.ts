@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { UserService } from './user.service';
 
@@ -12,6 +12,8 @@ import { User } from './user';
 })
 export class UserlistComponent implements OnInit {
 
+  @Input() selectedUser;
+
   users: User[];
 
   constructor(private userService: UserService) { }
@@ -22,6 +24,11 @@ export class UserlistComponent implements OnInit {
 
   ngOnInit() {
     this.getUsers();
+    this.selectedUser = 'No user has been selected.'
+  }
+
+  selectUser(user) {
+    this.selectedUser = 'The user ' + user.name + ' has been selected.'
   }
 
 }
