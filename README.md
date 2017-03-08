@@ -25,3 +25,9 @@ Before running the tests make sure you are serving the app via `ng serve`.
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Overview
+
+- mock-users: Has a constant that provides data to UserService
+- users.service: Is a service that has a getUsers function, which expects and returns a promise (in this case, data from mock-users)
+- userlist.component: has a provider declared (UserService), the constructor instantiates the userService, and there is a getUsers function to grab data from the service and assign it to the users array. This function is run as soon as the app starts
