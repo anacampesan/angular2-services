@@ -24,11 +24,11 @@ export class UserlistComponent implements OnInit {
 
   ngOnInit() {
     this.getUsers();
-    this.selectedUser = 'No user has been selected.'
+    this.selectedUser = 'No user has been selected.';
   }
 
   selectUser(user) {
-    this.selectedUser = 'The user ' + user.name + ' has been selected.'
+    this.selectedUser = 'The user ' + user.first_name + ' has been selected.'
   }
 
 }
