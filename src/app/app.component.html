@@ -1,4 +1,10 @@
-<h1>
-  List of users
-</h1>
-<app-userlist [selectedUser]=""></app-userlist>
+<a routerLink="/users">
+  <h1>{{message}}</h1>
+</a>
+<!-- This has to be removed if we don't want to display the user list right away -->
+<!-- <app-userlist [selectedUser]=""></app-userlist> -->
+<router-outlet
+  (activate)='onActivate($event)'
+  (deactivate)='onDeactivate($event)'
+>
+</router-outlet>
